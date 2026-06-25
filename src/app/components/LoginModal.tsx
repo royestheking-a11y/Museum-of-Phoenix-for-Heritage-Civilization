@@ -123,7 +123,7 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
         email: 'admin@phoenix.museum',
         level: 'Admin',
         token: 'admin_bypass_token'
-      });
+      } as any);
       setTimeout(() => { setLoading(false); onAdminAccess(); }, 800);
       return;
     }

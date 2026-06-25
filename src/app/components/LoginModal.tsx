@@ -117,6 +117,13 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
 
     // Admin shortcut
     if (email === 'admin@phoenix.museum' && password === 'admin123') {
+      saveUserSession({
+        _id: 'admin_system',
+        name: 'System Admin',
+        email: 'admin@phoenix.museum',
+        level: 'Admin',
+        token: 'admin_bypass_token'
+      });
       setTimeout(() => { setLoading(false); onAdminAccess(); }, 800);
       return;
     }

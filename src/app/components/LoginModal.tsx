@@ -117,7 +117,7 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
 
     // Admin shortcut
     if (email === 'admin@phoenix.museum' && password === 'admin123') {
-      setTimeout(() => { setLoading(false); onClose(); onAdminAccess(); }, 800);
+      setTimeout(() => { setLoading(false); onAdminAccess(); }, 800);
       return;
     }
 

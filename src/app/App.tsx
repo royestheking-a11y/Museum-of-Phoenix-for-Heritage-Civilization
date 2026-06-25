@@ -172,7 +172,7 @@ export default function App() {
         onClose={() => navigate(-1)}
         onAdminAccess={() => { 
           setUserLevel('Admin'); 
-          navigate('/admin'); 
+          setTimeout(() => navigate('/admin', { replace: true }), 50); 
         }}
         onEnterMuseum={(level) => { 
           setUserLevel(level); 

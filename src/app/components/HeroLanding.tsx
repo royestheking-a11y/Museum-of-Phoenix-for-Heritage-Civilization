@@ -38,7 +38,7 @@ function LinkedInIcon({ size = 18, color = 'currentColor' }: { size?: number; co
 
 const halls = [
   { id: 1, Icon: Landmark, title: 'History of Symbols', arabic: 'تاريخ الرموز', color: '#8B6914', bg: '#2a1500', desc: '25 artifacts across 5,500 years', descAr: '25 قطعة أثرية عبر 5,500 عام' },
-  { id: 2, Icon: Moon, title: "Qur'anic Symbolism", arabic: 'رموز القرآن', color: '#1a6a4a', bg: '#051a10', desc: '7 categories of sacred metaphors', descAr: '7 فئات من الاستعارات المقدسة' },
+  { id: 2, Icon: Moon, title: "Qur'anic Symbolism", arabic: 'رموز القرآن', color: '#1a6a4a', bg: '#051a10', desc: '7 categories of symbols', descAr: '7 فئات من الرموز' },
   { id: 3, Icon: Lock, title: 'Cryptography', arabic: 'علم التشفير', color: '#3a3a8a', bg: '#080820', desc: 'Al-Kindi & Arab cipher legacy', descAr: 'الكندي وإرث التشفير العربي' },
   { id: 4, Icon: Layers, title: 'Semiotics', arabic: 'السيميائية', color: '#6a2a8a', bg: '#140820', desc: 'Signs, meaning & cultural memory', descAr: 'العلامات والمعاني والذاكرة الثقافية' },
   { id: 5, Icon: Languages, title: 'Semantics', arabic: 'علم الدلالة', color: '#2a6a2a', bg: '#081408', desc: '8 Arabic root word trees', descAr: '8 أشجار كلمات للجذور العربية' },

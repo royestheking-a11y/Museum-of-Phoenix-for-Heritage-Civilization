@@ -11,7 +11,7 @@ import { getUserSession } from '../utils/auth';
 
 const halls = [
   { id: 1, name: 'History of Symbols', arabic: 'تاريخ الرموز', Icon: Landmark, angle: 270, color: '#8B6914', bg: '#3a2000', desc: 'Ancient civilizations & origins', descAr: 'الحضارات القديمة والأصول' },
-  { id: 2, name: "Qur'anic Symbolism", arabic: 'رموز القرآن', Icon: Moon, angle: 322, color: '#1a6a4a', bg: '#0a2a18', desc: 'Sacred metaphors & divine signs', descAr: 'الاستعارات المقدسة والعلامات الإلهية' },
+  { id: 2, name: "Qur'anic Symbolism", arabic: 'رموز القرآن', Icon: Moon, angle: 322, color: '#1a6a4a', bg: '#0a2a18', desc: 'Quranic numbers and animals', descAr: 'الأرقام والحيوانات في القرآن' },
   { id: 3, name: 'Cryptography', arabic: 'علم التشفير', Icon: Lock, angle: 14, color: '#3a3a8a', bg: '#0a0a2a', desc: 'Ciphers & secret writing', descAr: 'الشيفرات والكتابة السرية' },
   { id: 4, name: 'Semiotics', arabic: 'السيميائية', Icon: Layers, angle: 66, color: '#6a2a8a', bg: '#1a0a2a', desc: 'Signs & meaning systems', descAr: 'العلامات وأنظمة المعاني' },
   { id: 5, name: 'Semantics', arabic: 'علم الدلالة', Icon: Languages, angle: 118, color: '#2a6a2a', bg: '#0a1a0a', desc: 'Word roots & linguistic depth', descAr: 'جذور الكلمات والعمق اللغوي' },

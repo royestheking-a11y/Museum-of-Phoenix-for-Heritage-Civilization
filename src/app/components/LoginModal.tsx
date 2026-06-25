@@ -148,7 +148,14 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
         saveUserSession(user);
         setUserType(user.level);
         setSuccess(true);
-        setTimeout(() => { setSuccess(false); setTicketIssued(true); }, 1000);
+        setTimeout(() => { 
+          setSuccess(false); 
+          if (user.level === 'Admin') {
+            onAdminAccess();
+          } else {
+            setTicketIssued(true); 
+          }
+        }, 1000);
       } else if (tab === 'register') {
         const res = await fetch(`${API_BASE_URL}/api/users`, {
           method: 'POST',

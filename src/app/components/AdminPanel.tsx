@@ -36,9 +36,9 @@ const navItems = [
   { id: 'settings', label: 'Settings', labelAr: 'الإعدادات', Icon: Settings },
 ];
 
-interface Props { onBack: () => void; }
+interface Props { onBack: () => void; onLogout?: () => void; }
 
-export default function AdminPanel({ onBack }: Props) {
+export default function AdminPanel({ onBack, onLogout }: Props) {
   const { isAr } = useLanguage();
   const [activeNav, setActiveNav] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -352,6 +352,11 @@ const [dbArtifacts, setDbArtifacts] = useState<any[]>([]);
             style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px', background: 'rgba(255,100,100,0.08)', border: '1px solid rgba(255,100,100,0.2)', borderRadius: 6, cursor: 'pointer', marginBottom: 4, textAlign: isAr ? 'right' : 'left' }}>
             <ArrowLeft size={16} color="#ff6b6b" style={{ flexShrink: 0, transform: isAr ? 'rotate(180deg)' : 'none' }} />
             {sidebarOpen && <span style={{ fontFamily: isAr ? '"IBM Plex Sans Arabic"' : 'Inter', fontSize: '0.78rem', color: '#ff6b6b', whiteSpace: 'nowrap' }}>{isAr ? 'خروج من الإدارة' : 'Exit Admin'}</span>}
+          </button>
+          <button onClick={onLogout}
+            style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '10px', background: 'rgba(255,50,50,0.1)', border: '1px solid rgba(255,50,50,0.3)', borderRadius: 6, cursor: 'pointer', textAlign: isAr ? 'right' : 'left' }}>
+            <LogOut size={16} color="#ff4444" style={{ flexShrink: 0 }} />
+            {sidebarOpen && <span style={{ fontFamily: isAr ? '"IBM Plex Sans Arabic"' : 'Inter', fontSize: '0.78rem', color: '#ff4444', whiteSpace: 'nowrap', fontWeight: 'bold' }}>{isAr ? 'تسجيل الخروج' : 'Log Out'}</span>}
           </button>
         </div>
       </motion.div>

@@ -141,7 +141,7 @@ export default function App() {
           } />
           
           <Route path="/admin" element={
-            userLevel === 'Admin' ? <AdminPanel key="admin" onBack={() => navigate('/home')} /> : <Navigate to="/home" replace />
+            userLevel === 'Admin' ? <AdminPanel key="admin" onBack={() => navigate('/home')} onLogout={() => { clearUserSession(); setUserLevel('Guest'); navigate('/home'); }} /> : <Navigate to="/home" replace />
           } />
           
           <Route path="/contact" element={<ContactPage key="contact" onBack={() => navigate('/home')} />} />

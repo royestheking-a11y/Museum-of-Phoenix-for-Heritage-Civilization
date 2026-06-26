@@ -100,7 +100,7 @@ export default function HeroLanding({ onEnterMuseum, onOpenSearch, onNavigate, o
       <ParticleField count={40} color="#D4AF37" />
 
       {/* ─── MAIN CONTENT WRAPPER ─── */}
-      <div style={{ width: '100%' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%' }}>
 
       {/* ─── MINIMAL FLOATING HEADER ─── */}
       <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, pointerEvents: 'none', display: 'flex', justifyContent: 'center' }}>
@@ -311,13 +311,7 @@ export default function HeroLanding({ onEnterMuseum, onOpenSearch, onNavigate, o
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer style={{ 
-        borderTop: '1px solid rgba(212,175,55,0.15)', 
-        background: 'rgba(13,17,23,0.4)', 
-        display: 'flex', 
-        justifyContent: 'center', 
-        backdropFilter: 'blur(20px)'
-      }}>
+      <footer style={{ marginTop: 'auto', borderTop: '1px solid rgba(212,175,55,0.15)', background: 'rgba(13,17,23,0.4)', display: 'flex', justifyContent: 'center', backdropFilter: 'blur(20px)' }}>
         <div style={{ width: '100%', maxWidth: 1200, paddingTop: '52px', paddingLeft: 'max(4vw, 24px)', paddingRight: 'max(4vw, 24px)', paddingBottom: 'calc(32px + env(safe-area-inset-bottom))', direction: isAr ? 'rtl' : 'ltr' }}>
 
           {/* ── Museum Branding + Language + Social ── */}

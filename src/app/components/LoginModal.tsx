@@ -207,7 +207,9 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
               border: '1px solid rgba(212,175,55,0.15)',
               borderRadius: 24,
               position: 'relative',
-              overflow: 'hidden',
+              overflowX: 'hidden',
+              overflowY: 'auto',
+              maxHeight: '95vh',
               boxShadow: '0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1)'
             }}
           >
@@ -248,12 +250,13 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
             </div>
 
             {/* Right Side (Form) */}
-            <div className="flex-1 p-8 sm:p-12 relative flex flex-col justify-center" style={{ background: 'rgba(13, 17, 23, 0.4)' }}>
+            <div className="flex-1 p-5 sm:p-12 relative flex flex-col justify-center min-h-min" style={{ background: 'rgba(13, 17, 23, 0.4)' }}>
               
               {/* Close Button */}
               <button 
                 onClick={onClose} 
-                style={{ position: 'absolute', top: 20, right: 20, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)', color: '#C7C3B9', cursor: 'pointer', padding: 8, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', zIndex: 20 }} 
+                className="absolute top-4 right-4 sm:top-5 sm:right-5"
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.05)', color: '#C7C3B9', cursor: 'pointer', padding: 8, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', zIndex: 20 }} 
                 onMouseOver={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#FFF'; }} 
                 onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = '#C7C3B9'; }}
               >
@@ -311,9 +314,9 @@ export default function LoginModal({ open, initialTab, onClose, onAdminAccess, o
                   </div>
                 ) : (
                   <>
-                <div style={{ marginBottom: 32 }}>
-                  <div className="md:hidden flex justify-center mb-6">
-                     <PhoenixSVG size={64} glowIntensity={0.8} />
+                <div style={{ marginBottom: 24 }} className="mt-8 sm:mt-0">
+                  <div className="md:hidden flex justify-center mb-4">
+                     <PhoenixSVG size={48} glowIntensity={0.8} />
                   </div>
                   <h3 style={{ fontFamily: isAr ? '"IBM Plex Sans Arabic"' : '"Playfair Display"', fontSize: '1.8rem', color: '#F8F4EA', margin: '0 0 8px', letterSpacing: '0.01em', textAlign: isAr ? 'right' : 'left' }}>
                     {tab === 'login' ? (isAr ? 'مرحباً بعودتك' : 'Welcome Back') : tab === 'register' ? (isAr ? 'انضم إلى الأكاديمية' : 'Join the Academy') : (isAr ? 'استعادة كلمة المرور' : 'Reset Password')}

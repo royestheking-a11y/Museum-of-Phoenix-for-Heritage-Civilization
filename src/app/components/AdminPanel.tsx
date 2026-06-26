@@ -1,5 +1,4 @@
-const RAW_URL = (import.meta as any).env.VITE_API_BASE_URL || 'http://localhost:5005';
-const API_BASE_URL = RAW_URL.replace(/\/api\/?$/, '');
+const API_BASE_URL = (import.meta as any).env.VITE_API_BASE_URL || 'http://localhost:5005';
 import { useState, useEffect, useCallback, useMemo, type ReactElement } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {

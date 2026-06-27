@@ -108,10 +108,35 @@ app.put('/api/payments/:id/status', async (req, res) => {
   }
 });
 
+// --- Self Ping System ---
+app.get('/api/ping', (req, res) => {
+  res.status(200).send('pong');
+});
+
 const PORT = process.env.PORT || 5005;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// Self Ping Mechanism to keep Render awake (runs every 10 minutes)
+const PING_INTERVAL = 10 * 60 * 1000; // 10 minutes
+const SERVER_URL = process.env.RENDER_EXTERNAL_URL || process.env.SERVER_URL || `http://localhost:${PORT}`;
+
+setInterval(() => {
+  try {
+    const http = require('http');
+    const https = require('https');
+    const client = SERVER_URL.startsWith('https') ? https : http;
+    
+    client.get(`${SERVER_URL}/api/ping`, (res) => {
+      console.log(`[Self-Ping] Status: ${res.statusCode} at ${new Date().toISOString()}`);
+    }).on('error', (err) => {
+      console.error(`[Self-Ping] Error: ${err.message}`);
+    });
+  } catch (error) {
+    console.error('[Self-Ping] Setup error:', error);
+  }
+}, PING_INTERVAL);
 
 const User = require('./models/User');
 const Course = require('./models/Course');
